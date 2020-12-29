@@ -1,0 +1,11 @@
+.form {
+  display: none;
+}
+
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
