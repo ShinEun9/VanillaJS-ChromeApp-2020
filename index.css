@@ -14,7 +14,7 @@ body {
   display: block;
 }
 
-span {
+button + span {
   cursor: pointer;
 }
 .clicked {

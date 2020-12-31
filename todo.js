@@ -9,7 +9,8 @@ let toDos = [];
 
 function underlineToDo(event){
     const span = event.target;
-    span.classList.toggle(CLICKED_CLASS);
+    const li=span.parentNode;
+    li.classList.toggle(CLICKED_CLASS);
 }
 
 
