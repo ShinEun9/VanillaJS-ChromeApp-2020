@@ -9,3 +9,10 @@
 .showing {
   display: block;
 }
+
+span {
+  cursor: pointer;
+}
+.clicked {
+  text-decoration: line-through;
+}
