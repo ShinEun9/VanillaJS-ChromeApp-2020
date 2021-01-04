@@ -6,23 +6,35 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="js-clock">
+    <div class="js-clock clock">
       <h1>00:00</h1>
     </div>
-    <form class="js-form form">
-      <input type="text" placeholder="What is your name?" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-toDoList"></ul>
+    <div class="part-one">
+      <form class="js-form name-form">
+        <input
+          class="name-form-input"
+          type="text"
+          placeholder="What is your name?"
+        />
+      </form>
+      <h4 class="js-greetings greetings"></h4>
+    </div>
+    <div class="part-two">
+      <form class="js-toDoForm">
+        <input class="toDoForm-input" type="text" placeholder="Write a to do" />
+      </form>
+      <ul class="js-toDoList"></ul>
+    </div>
 
-    <span class="js-weather"></span>
+    <span class="js-weather weather"></span>
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
     <script src="bg.js"></script>
     <script src="weather.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

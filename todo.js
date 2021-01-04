@@ -4,16 +4,26 @@ const toDoForm=document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";   
 const CLICKED_CLASS="clicked";
+let CURRENT_CLICKED="unclicked";
+
 
 let toDos = [];
 
-function underlineToDo(event){
-    const span = event.target;
-    const li=span.parentNode;
-    li.classList.toggle(CLICKED_CLASS);
+function clickCheckbox(event){
+    const checkbox=event.target;
+    const span=checkbox.parentNode;
+    const sibling= span.nextSibling;    
+    if(CURRENT_CLICKED==="clicked"){
+        span.innerHTML=`<i class="far fa-square"></i>`
+        sibling.classList.toggle(CLICKED_CLASS);
+        CURRENT_CLICKED="unclicked";
+    }else{
+        span.innerHTML=`<i class="far fa-check-square"></i>`
+        sibling.classList.toggle(CLICKED_CLASS);
+        CURRENT_CLICKED="clicked";
+    }
+   
 }
-
-
 
 function deleteToDo(event){
     const btn = event.target;
@@ -32,15 +42,18 @@ function saveToDos(){
 
 function paintToDo(text){
     const li= document.createElement("li");
+    const checkbox = document.createElement("span");
+    checkbox.addEventListener("click",clickCheckbox);
     const delBtn = document.createElement("button");
     delBtn.addEventListener("click",deleteToDo);
     const span = document.createElement("span");
-    span.addEventListener("click",underlineToDo);
     const newId = toDos.length+1;
-    delBtn.innerText="❌";
+    checkbox.innerHTML = `<i class="far fa-square"></i>`
+    delBtn.innerText="✖";
     span.innerText = text;
-    li.appendChild(delBtn);
+    li.appendChild(checkbox);
     li.appendChild(span);
+    li.appendChild(delBtn);
     li.id = newId;
     toDoList.appendChild(li);
     const toDoObj = {
